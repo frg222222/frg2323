@@ -1,0 +1,213 @@
+/* 기본 스타일 */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    background-image: url('../img/zz.gif');
+    background-size: 120%;
+    background-position: center;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    padding: 0 3%;
+    position: relative;
+}
+
+/* 불투명한 검은색 오버레이 추가 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* 박스 스타일 */
+.box {
+    width: 120px;
+    height: 120px;
+    background-color: #222222;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid #ffcc00;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+/* Hover 애니메이션 */
+.box:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 1), 0 0 40px rgba(255, 204, 0, 0.7);
+    animation: shake 0.5s ease infinite;
+}
+
+/* 흔들기 애니메이션 */
+@keyframes shake {
+    0%, 100% {
+        transform: scale(1.2) translateX(0);
+    }
+    25% {
+        transform: scale(1.2) translateX(-2px);
+    }
+    50% {
+        transform: scale(1.2) translateX(2px);
+    }
+    75% {
+        transform: scale(1.2) translateX(-1px);
+    }
+}
+
+/* 박스 컨테이너 스타일 */
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    position: relative;
+    z-index: 2;
+}
+
+/* 타이틀 이미지 스타일 */
+img#title-image {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: auto;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 타이틀 이미지 hover 시 효과 */
+img#title-image:hover {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.9;
+}
+
+/* 하단 이미지 스타일 */
+img#bottom-image {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 250px;
+    height: auto;
+    z-index: 2;
+}
+
+/* 타이머 스타일 */
+#timer {
+    position: absolute;
+    top: 570px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #ffcc00;
+    text-shadow: 3px 3px 0px #000000;
+    z-index: 3;
+}
+
+/* 모바일 화면에서의 스타일 */
+@media (max-width: 425px) {
+    .box-container {
+        width: 100%;
+    }
+    img#title-image {
+        width: 250px;
+    }
+}
+
+/* 타이틀 텍스트 스타일 */
+.retro-title {
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    text-shadow: 
+        2px 2px 0px #000000, 
+        -2px -2px 0px #000000, 
+        2px -2px 0px #000000, 
+        -2px 2px 0px #000000;
+    z-index: 2;
+    animation: text-flicker 1.2s infinite alternate;
+}
+
+/* 텍스트 깜빡임 애니메이션 */
+@keyframes text-flicker {
+    0%, 100% {
+        color: #ffcc00;
+        text-shadow: 
+            2px 2px 0px #000000, 
+            -2px -2px 0px #000000, 
+            2px -2px 0px #000000, 
+            -2px 2px 0px #000000;
+    }
+    50% {
+        color: #fffb00;
+        text-shadow: 
+            2px 2px 0px #ff3300, 
+            -2px -2px 0px #ff3300, 
+            2px -2px 0px #ff3300, 
+            -2px 2px 0px #ff3300;
+    }
+}
+
+/* 게임 컨테이너 스타일 */
+.game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+    border-radius: 10px;
+}
+
+/* 게임 프레임 스타일 */
+.game-frame {
+    width: 80%;
+    height: 80%;
+    background-color: #000;
+    border: 5px solid #ffcc00;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 게임 프레임 내 이미지 스타일 */
+.game-frame img {
+    max-width: 62%;
+    max-height: 62%;
+    object-fit: contain;
+}
+
+.box:nth-child(3) .game-frame img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.box:nth-child(4) .game-frame img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.box:nth-child(6) .game-frame img {
+    max-width: 50%;
+    max-height: 50%;
+}
+

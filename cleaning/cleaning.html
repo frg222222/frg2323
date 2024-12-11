@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Cleanup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cleaning.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Cyberpunk Cleanup</h1>
+        <p id="narration">혼란스러운 미래 도시에서 방을 정리하세요!</p>
+        <div id="score-board">Score: <span id="score">0</span></div>
+        <div id="timer">Time Left: <span id="time-left">30</span>s</div>
+        <div id="timer-bar">
+            <div id="timer-progress"></div>
+        </div>
+        <div id="game-area"></div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <script src="cleaning.js"></script>
+</body>
+</html>

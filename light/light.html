@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>121 Image Light Effects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="light.css">
+</head>
+<body>
+    <h1>Light Finding Game</h1>
+    <div class="content">
+        <div class="light" style="top: 50px; left: 100px;" data-comment="첫 번째 빛"></div>
+        <div class="light" style="top: 100px; left: 150px;" data-comment="두 번째 빛"></div>
+        <div class="light" style="top: 150px; left: 300px;" data-comment="세 번째 빛"></div>
+        <div class="light" style="top: 200px; left: 450px;" data-comment="네 번째 빛"></div>
+        <div class="light" style="top: 100px; left: 600px;" data-comment="다섯 번째 빛"></div>
+        <div class="light" style="top: 300px; left: 200px;" data-comment="여섯 번째 빛"></div>
+    </div>
+    <div class="description">이미지 위에 마우스를 올려서 동적 효과를 확인하세요!</div>
+    <div id="highlight"></div>
+    <div class="dark-overlay"></div>
+    <div class="subtitle-dark"></div>
+    <div class="counter">Light: <span id="click-count">0</span></div>
+    <div class="complete-message" id="complete-message">모든 빛을 찾았습니다!</div>
+
+    <script src="light.js"></script>
+</body>
+</html>

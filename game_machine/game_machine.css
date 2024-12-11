@@ -1,0 +1,165 @@
+body {
+    background-image: url('../img/yy.jpg'); /* 자신의 사진 경로 */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.game-console {
+    width: 330px;
+    height: 550px;
+    background: linear-gradient(145deg, #f5c900, #e6a800);
+    border-radius: 25px;
+    padding: 15px;
+    position: relative;
+    border: 6px solid #333;
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.7), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.game-console::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 25px;
+    border: 6px solid black;
+    z-index: -1;
+}
+
+.screen {
+    background-color: #000;
+    border: 10px solid #444;
+    border-radius: 18px;
+    width: 100%;
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.court {
+    background: url('../basketball_court.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.character {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 150px;
+    background: url('../img/ee.png') no-repeat 0 0;
+    background-size: cover;
+    border-radius: 10px;
+    animation: moveCharacter 5s 1s cubic-bezier(0.25, 0.75, 0.58, 1) alternate infinite, animateCharacter 1.2s steps(12) infinite;
+    transform: scale(0.8);
+    transform-origin: top left;
+}
+
+@keyframes moveCharacter {
+    0% { top: 0px; left: 0px; }
+    25% { top: 50px; left: 100px; }
+    50% { top: 150px; left: 200px; }
+    75% { top: 250px; left: 100px; }
+    100% { top: 0px; left: 0px; }
+}
+
+@keyframes animateCharacter {
+    0% { background-position: 0 0; }
+    100% { background-position: -1795px 0; }
+}
+
+.btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #ff4d00, #e63e00);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.btn-control {
+    background: linear-gradient(145deg, #555, #333);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.btn-control:active {
+    background: #222;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding: 10px;
+    color: #ffcc00;
+    text-shadow: 
+        2px 2px 0 #333,   
+        -2px -2px 5px #ff6600, 
+        0 0 10px #ff9900, 
+        0 0 20px #ffcc00;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 
+            2px 2px 0 #333, 
+            -2px -2px 5px #ff3300, 
+            0 0 10px #ff6600, 
+            0 0 20px #ff9900;
+    }
+    100% {
+        text-shadow: 
+            2px 2px 0 #333, 
+            -2px -2px 5px #ffcc00, 
+            0 0 20px #ffcc33, 
+            0 0 30px #ffff66;
+    }
+}
