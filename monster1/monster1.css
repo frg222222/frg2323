@@ -1,0 +1,163 @@
+/* 기본 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    padding: 50px;
+    background: url('../img/1qq.gif') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+}
+
+h1 {
+    color: lime;
+    font-size: 48px;
+    text-shadow: 3px 3px 5px black;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.score, .level, .timer {
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+    margin: 10px 0;
+}
+
+.timer {
+    animation: blinkTimer 1s infinite alternate;
+}
+
+@keyframes blinkTimer {
+    0% { color: white; }
+    100% { color: red; }
+}
+
+.message {
+    font-size: 24px;
+    color: cyan;
+    text-shadow: 2px 2px 4px black;
+    margin-top: 20px;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    color: lime;
+    background-color: black;
+    border: 3px solid lime;
+    cursor: pointer;
+    text-shadow: none;
+    transition: 0.3s ease;
+    box-shadow: 6px 6px 0 black;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 3px;
+}
+
+.start-button:hover {
+    background-color: lime;
+    color: black;
+    transform: scale(1.1);
+}
+
+.start-button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 3px 0 black;
+}
+
+.monster {
+    position: absolute;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+}
+
+.monster:hover {
+    transform: scale(1.1);
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: burst 0.5s forwards;
+}
+
+@keyframes burst {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1920px) {
+    body {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .score, .level, .timer {
+        font-size: 20px;
+    }
+
+    .start-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .monster {
+        width: 100px;
+        height: 100px;
+    }
+
+    .message {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .score, .level, .timer {
+        font-size: 18px;
+    }
+
+    .start-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .monster {
+        width: 80px;
+        height: 80px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+}
